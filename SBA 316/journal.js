@@ -9,7 +9,7 @@ console.log(submitBtn)
 
 
 submitBtn.addEventListener("click", addEntryToJournal)
-
+let entries = [];
 
 function addEntryToJournal() {
     const newSect = document.createElement("div")
@@ -25,6 +25,11 @@ function addEntryToJournal() {
     title.value =""
     
     //adding date
+    const date = document.getElementById("entryDate")
+    const loggedDate= document.createElement("p")
+    loggedDate.style.color = "var(--date-color)";
+    loggedDate.textContent = date.value;
+    newSect.appendChild(loggedDate)
 
     //adding journal entry
     const textarea =  document.getElementById("journalEntry")
@@ -32,6 +37,9 @@ function addEntryToJournal() {
     loggedEntry.textContent = textarea.value;
     newSect.appendChild(loggedEntry)
     textarea.value = ""
+
+    //add header break
+    newSect.appendChild(document.createElement("hr"))
 
 //show user successful log
     console.log("added entry")

@@ -1,7 +1,15 @@
+:root {
+    --date-color: #727272;
+    --h2-font-serif: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+}
 body {
     margin: 10px;
   
 }
 #form {
     text-align: left;
+}
+
+h2 {
+    font-family: var(--h2-font-serif);
 }

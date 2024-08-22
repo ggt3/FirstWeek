@@ -10,6 +10,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -17,14 +19,14 @@
 
     <main>
       <div id = "form" class="blog-post">
-        <label for="title">Date of Entry</label>
+        <label for="date">Date of Entry</label>
         <input type="date" name="entryDate" id="entryDate" /> <br><br>
    
         <label for="title">Title of Entry</label>
-        <input type ="text" name ="title" id="title" required><br><br>
+        <input type ="text" name ="title" id="title" size="50"required><br><br>
 
         <label for="journalEntry">Tell us about your day:</label><br>
-        <textarea id = "journalEntry" name="journalEntry"rows="6" cols="40" placeholder ="Write your entry here..." required></textarea><br>
+        <textarea id = "journalEntry" name="journalEntry"rows="6" cols="60" placeholder ="Write your entry here..." required></textarea><br>
         <input type = "submit" id="submit" value="Save">
         
         <!-- <button id="submit">Save</button> -->
@@ -32,7 +34,6 @@
 
       </div>
       <div id = "logEntries">
-        <ul id="anEntry">test</ul>
       </div>
     </main>
 
