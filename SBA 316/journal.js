@@ -7,12 +7,23 @@ const log = document.getElementById("logEntries")
 const submitBtn = document.getElementById("submit")
 console.log(submitBtn)
 
+const form = document.getElementById("form")
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    if (input.value.trim() === '') {
+      alert('Please fill out the input field!');
+    } else {
+      // Form submission logic goes here
+      form.submit();
+    }
+  });
 submitBtn.addEventListener("click", addEntryToJournal)
-let entries = [];
+let entryCounter = 1;
 
 function addEntryToJournal() {
     const newSect = document.createElement("div")
+    newSect.setAttribute("id",entryCounter)
     newSect.classList.add("oneEntry") //for fomatting an entry css
     const listAll = document.getElementById("logEntries")
     listAll.insertBefore(newSect, listAll.firstChild) //adding the newest entry at the top
@@ -38,11 +49,23 @@ function addEntryToJournal() {
     newSect.appendChild(loggedEntry)
     textarea.value = ""
 
+    //add delete button for entry
+    const deleter = document.createElement("button")
+    deleter.textContent="delete entry"
+    deleter.classList.add("delete")
+    deleter.addEventListener("click", deleteEntryFromJournal)
+    newSect.appendChild(deleter)
     //add header break
     newSect.appendChild(document.createElement("hr"))
+    entryCounter++;
 
-//show user successful log
+    //show user successful log
     console.log("added entry")
 }
 
+
+function deleteEntryFromJournal(e) {
+    e.stopPropagation()
+    log.removeChild(e.target.parentNode)
+}
 // const title = document.getElementById("title").required = true
