@@ -4,12 +4,25 @@
 }
 body {
     margin: 10px;
-  
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 #form {
-    text-align: left;
+    text-align: left;  
 }
+
+/* #logEntries:nth-child(odd) {
+    background-color: blue;
+}
+#logEntries:nth-child(even) {
+    background-color: green;
+} */
 
 h2 {
     font-family: var(--h2-font-serif);
+}
+
+#oneEntry {
+    padding:20px
 }
