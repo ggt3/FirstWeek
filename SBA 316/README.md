@@ -1,4 +1,4 @@
-### about
+### info on *secret journal* 
 For my page, I decided to make a one page journal entry where you can see the entries "saved" on the page in reverse submission order.
 
 ######

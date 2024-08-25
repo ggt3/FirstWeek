@@ -11,13 +11,6 @@ let entryCounter = 1;
 
 function addEntryToJournal(e) {
   e.preventDefault();
-  const title = document.getElementById("title");
-  const textarea = document.getElementById("journalEntry");
-  //not adding null title/entires
-  if (title.value == "" || textarea.value == "") {
-    console.log("type something");
-    return;
-  }
 
   const newSect = document.createElement("div");
   newSect.style.backgroundColor = "#eaeaea";
@@ -28,6 +21,7 @@ function addEntryToJournal(e) {
   //add header break
   newSect.appendChild(document.createElement("hr"));
   //adding title
+  const title = document.getElementById("title");
   const loggedTitle = document.createElement("h2");
   loggedTitle.textContent = `${title.value}`;
   newSect.appendChild(loggedTitle);
@@ -41,6 +35,7 @@ function addEntryToJournal(e) {
   newSect.appendChild(loggedDate);
 
   //adding journal entry
+  const textarea = document.getElementById("journalEntry");
   const loggedEntry = document.createElement("p");
   loggedEntry.textContent = textarea.value;
   newSect.appendChild(loggedEntry);
